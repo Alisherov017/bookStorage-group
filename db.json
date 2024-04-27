@@ -4,8 +4,19 @@
       "email": "farangiz_anvarjanova@mail.ru",
       "username": "fanwwi_",
       "password": "12345678",
-      "confirmPassword": "12345678",
       "id": 1
+    },
+    {
+      "email": "mirishova_s@mail",
+      "username": "rdtfyugi",
+      "password": "1234567890",
+      "id": 2
+    },
+    {
+      "email": "mirishova_s@mail.ru",
+      "username": "fanwwi_",
+      "password": "12345678",
+      "id": 3
     }
   ]
 }

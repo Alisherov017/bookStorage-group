@@ -15,7 +15,6 @@ export const submitForm = (formData) => {
         email: formData.email,
         username: formData.username,
         password: formData.password,
-        confirmPassword: formData.confirmPassword,
       };
 
       const response = await axios.post(API, requestData);
