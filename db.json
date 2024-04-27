@@ -1,1 +1,11 @@
-{}
+{
+  "users": [
+    {
+      "email": "farangiz_anvarjanova@mail.ru",
+      "username": "fanwwi_",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "id": 1
+    }
+  ]
+}

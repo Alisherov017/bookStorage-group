@@ -242,3 +242,64 @@ footer .footer-block {
   width: 50px;
   border-radius: 10px;
 }
+
+/*! join  */
+
+.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50px;
+  gap: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 254, 255, 1) 10%,
+    rgba(0, 5, 255, 1) 100%
+  );
+  width: 500px;
+  height: 500px;
+  padding-bottom: 100px;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.join h2 {
+  margin-left: -5px;
+  color: #fff;
+}
+
+.join form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.mode-btns {
+  display: flex;
+  gap: 15px;
+}
+.join button {
+  padding: 7px 20px;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #0000ff;
+  cursor: pointer;
+}
+
+.join input {
+  padding: 3px 20px;
+  border: 3px solid #ffffff;
+  outline: none;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #0000ff;
+}
+
+.join input::placeholder {
+  color: #0000ff;
+}

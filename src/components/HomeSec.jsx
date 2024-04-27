@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomeSec = () => {
   return (
@@ -8,7 +9,7 @@ const HomeSec = () => {
         Explore our expansive collection of digital books and find your perfect
         literary companion.
       </p>
-      <button>Create Account or Log in</button>
+      <Link to="/join"><button>Create Account or Log in</button></Link>
     </section>
   );
 };
