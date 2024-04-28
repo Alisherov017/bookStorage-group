@@ -1,38 +1,9 @@
-const initialState = {
-  mode: "signup",
-  formData: {},
-  isLoading: false,
-  error: null,
-};
+import React from 'react'
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "CHANGE_MODE":
-      return {
-        ...state,
-        mode: action.payload,
-      };
-    case "SUBMIT_FORM_REQUEST":
-      return {
-        ...state,
-        isLoading: true,
-        error: null,
-      };
-    case "SUBMIT_FORM_SUCCESS":
-      return {
-        ...state,
-        isLoading: false,
-        formData: action.payload,
-      };
-    case "SUBMIT_FORM_FAILURE":
-      return {
-        ...state,
-        isLoading: false,
-        error: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+const reducer = () => {
+  return (
+    <div>reducer</div>
+  )
+}
 
-export default reducer;
+export default reducer

@@ -9,7 +9,6 @@ const HomeSec = () => {
         Explore our expansive collection of digital books and find your perfect
         literary companion.
       </p>
-      <Link to="/join"><button>Create Account or Log in</button></Link>
     </section>
   );
 };

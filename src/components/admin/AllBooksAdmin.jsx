@@ -1,12 +1,12 @@
 import React from "react";
-import harryBook from "../img/harry-potter-book.jpg";
-import prideBook from "../img/pride-and-prejudice.webp";
-import atomicBook from "../img/atomic-habits-book.jpg";
-import kidsBook from "../img/kids-book.jpg";
-import richBook from "../img/rich-book.webp";
-import scarletBook from "../img/scarletBook.jpg";
+import harryBook from "../../img/harry-potter-book.jpg";
+import prideBook from "../../img/pride-and-prejudice.webp";
+import atomicBook from "../../img/atomic-habits-book.jpg";
+import kidsBook from "../../img/kids-book.jpg";
+import richBook from "../../img/rich-book.webp";
+import scarletBook from "../../img/scarletBook.jpg";
 
-const AllBooks = () => {
+const AllBooksAdmin = () => {
   const openLink = (linkUrl) => {
     window.open(linkUrl, "_blank");
   };
@@ -23,6 +23,10 @@ const AllBooks = () => {
             )
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={harryBook} alt="" className="card-img" />
           <h3 className="card-title">Harry Potter</h3>
           <span className="card-author">J.K. Rowling</span>
@@ -39,6 +43,10 @@ const AllBooks = () => {
             openLink("https://giove.isti.cnr.it/demo/eread/Libri/joy/Pride.pdf")
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={prideBook} alt="" className="card-img" />
           <h3 className="card-title">Pride and Prejudice</h3>
           <span className="card-author">Jane Austen</span>
@@ -56,6 +64,10 @@ const AllBooks = () => {
             )
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={atomicBook} alt="" className="card-img" />
           <h3 className="card-title">Atomic Habits</h3>
           <span className="card-author">James Clear</span>
@@ -74,6 +86,10 @@ const AllBooks = () => {
             )
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={kidsBook} alt="" className="card-img" />
           <h3 className="card-title">Matilda</h3>
           <span className="card-author">Roald Dahl</span>
@@ -91,6 +107,10 @@ const AllBooks = () => {
             )
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={richBook} alt="" className="card-img" />
           <h3 className="card-title">Think and grow rich</h3>
           <span className="card-author">Napoleon Hill</span>
@@ -108,6 +128,10 @@ const AllBooks = () => {
             openLink("https://www.arvindguptatoys.com/arvindgupta/16r.pdf")
           }
         >
+          <div className="card-btns">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
           <img src={scarletBook} alt="" className="card-img" />
           <h3 className="card-title">Scarlet Sails</h3>
           <span className="card-author"> Alexander Grin</span>
@@ -122,4 +146,4 @@ const AllBooks = () => {
   );
 };
 
-export default AllBooks;
+export default AllBooksAdmin;
