@@ -3,11 +3,16 @@ import profilePhoto from "../img/profilePhoto.jpg";
 import instIcon from "../img/instagram-con.jpg";
 import faceIcon from "../img/footer-icon.png";
 import threadsIcon from "../img/threads-icon.jpg";
+// import profilePhoto from "../img/profilePhoto.jpg";
+import instIcon from "../img/instagram-con.jpg";
+import faceIcon from "../img/footer-icon.png";
+import threadsIcon from "../img/threads-icon.jpg";
+import profile from "../img/profile.jpeg"
 
 const ProfilePage = () => {
   return (
     <div className="profile">
-      <img src={profilePhoto} alt="" />
+      <img src={profile} alt="" />
       <h1>Jack Cornell</h1>
       <p>
         Imaginative book lover with a passion for coding. His days are filled
