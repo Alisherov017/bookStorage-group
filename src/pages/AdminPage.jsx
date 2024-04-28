@@ -14,6 +14,7 @@ const AdminPage = () => {
       <Recomendations />
       <Populars />
       <AllBooksAdmin />
+      
       <Footer />
     </div>
   );
