@@ -51,6 +51,8 @@ header img {
   font-size: 18px;
   box-shadow: -1px 2px 13px 0px rgba(43, 57, 44, 0.75);
   color: #2200ff;
+  margin-left: 130px;
+  margin-top: 50px;
 }
 
 .search::placeholder {

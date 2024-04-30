@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "../modal/ModalAdmin";
 import { Link } from "react-router-dom";
 
-const AllBooksAdmin = ({ booksData }) => {
+const AllBooksAdmin = ({ booksData, getBooksData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
 
@@ -37,7 +37,7 @@ const AllBooksAdmin = ({ booksData }) => {
             </div>
           ))}
       </div>
-      {isModalOpen && <Modal book={selectedBook} onClose={closeModal} />}
+      {isModalOpen && <Modal book={selectedBook} onClose={closeModal} getBooksData={getBooksData} />}
     </div>
   );
 };

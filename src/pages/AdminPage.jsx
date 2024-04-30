@@ -27,7 +27,7 @@ const AdminPage = () => {
       <HomeSec />
       <Recomendations />
       <Populars />
-      <AllBooksAdmin booksData={booksData} />
+      <AllBooksAdmin booksData={booksData} getBooksData={getBooksData} />
       <Footer />
     </div>
   );

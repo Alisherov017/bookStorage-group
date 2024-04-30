@@ -1,23 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { deleteBook, getOneBook, getBooks } from "../../store/actions";
-import { useDispatch, useSelector } from "react-redux";
 
 const Modal = ({ book, onClose }) => {
-  // !  удаление
-  const API = "http://localhost:8000/books";
-  const dispatch = useDispatch();
-
-  const handleDeleteBook = async () => {
-    try {
-      await dispatch(deleteBook(book.id)); // Отправляем запрос на удаление книги
-      dispatch(getBooks()); // Получаем обновленный список продуктов после удаления
-      onClose();
-    } catch (error) {
-      console.error("Error deleting book:", error);
-    }
-  };
-
   // !openlink
   const openLink = (linkUrl) => {
     window.open(linkUrl, "_blank");

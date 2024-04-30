@@ -20,9 +20,7 @@ const EditPage = () => {
         const res = await axios.get(API);
         setBookData(res.data);
         setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching book data:", error);
-      }
+      } catch (error) {}
     };
     fetchBookData();
   }, [API]);
@@ -35,9 +33,7 @@ const EditPage = () => {
   const handleEditBook = async () => {
     try {
       const res = await axios.put(API, bookData);
-      console.log("Book edited successfully:", res.data);
     } catch (error) {
-      console.error("Error editing book:", error);
     }
   };
 
@@ -48,7 +44,7 @@ const EditPage = () => {
   return (
     <div>
       <form className="formAdd">
-      <h2>Edit Book</h2>
+        <h2>Edit Book</h2>
         <input
           type="text"
           name="title"

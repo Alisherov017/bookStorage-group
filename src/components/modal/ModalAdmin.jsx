@@ -1,17 +1,16 @@
-// ModalAdmin.jsx
-
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { deleteBook } from "../../store/actions";
+import { deleteBook, getBooks } from "../../store/actions";
 import { useDispatch } from "react-redux";
 
-const ModalAdmin = ({ book, onClose }) => {
+const ModalAdmin = ({ book, onClose, getBooksData }) => {
   const dispatch = useDispatch();
 
   const handleDeleteBook = async () => {
     try {
-      await dispatch(deleteBook(book.id)); // Отправляем запрос на удаление книги
-      onClose(); // Закрываем модальное окно
+      await dispatch(deleteBook(book.id));
+      onClose();
+      getBooksData();
     } catch (error) {
       console.error("Error deleting book:", error);
     }
@@ -20,6 +19,10 @@ const ModalAdmin = ({ book, onClose }) => {
   const openLink = (linkUrl) => {
     window.open(linkUrl, "_blank");
   };
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
   return (
     <div className="modal-overlay">
