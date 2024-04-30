@@ -4,7 +4,7 @@ import axios from "axios";
 
 const EditPage = () => {
   const { id } = useParams();
-  const API = `http://localhost:8000/product/${id}`;
+  const API = `http://localhost:8000/books/${id}`;
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -12,12 +12,14 @@ const EditPage = () => {
     image: "",
     link: "",
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchBookData = async () => {
       try {
         const res = await axios.get(API);
         setBookData(res.data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching book data:", error);
       }
@@ -39,43 +41,47 @@ const EditPage = () => {
     }
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      <h1>Edit Book</h1>
-      <form>
-        <label>Title:</label>
+      <form className="formAdd">
+      <h2>Edit Book</h2>
         <input
           type="text"
           name="title"
           value={bookData.title}
           onChange={handleInputChange}
+          placeholder="Title:"
         />
-        <label>Author:</label>
         <input
           type="text"
           name="author"
           value={bookData.author}
           onChange={handleInputChange}
+          placeholder="Author:"
         />
-        <label>Description:</label>
         <textarea
           name="description"
           value={bookData.description}
           onChange={handleInputChange}
+          placeholder="Description:"
         />
-        <label>Image URL:</label>
         <input
           type="text"
           name="image"
           value={bookData.image}
           onChange={handleInputChange}
+          placeholder="Image URL:"
         />
-        <label>Link:</label>
         <input
           type="text"
           name="link"
           value={bookData.link}
           onChange={handleInputChange}
+          placeholder="Link:"
         />
         <button type="button" onClick={handleEditBook}>
           Save Changes

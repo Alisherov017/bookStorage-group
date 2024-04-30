@@ -1,44 +1,32 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "http://localhost:8000/product";
+const API = "http://localhost:8000/books";
 
-export const getProducts = createAsyncThunk(
-  "product/getProducts",
-  async () => {
-    const { data } = await axios.get(API);
-    return data;
-  }
-);
+export const getBooks = createAsyncThunk("books/getBooks", async () => {
+  const { data } = await axios.get(API);
+  return data;
+});
 
-export const addProduct = createAsyncThunk(
-  "product/addproducts",
-  async (newProduct, { dispatch }) => {
-    await axios.post(API, newProduct);
-    dispatch(getProducts());
-  }
-);
+export const addBook = createAsyncThunk("books/addBook", async (newBook) => {
+  await axios.post(API, newBook);
+  return newBook; // Возвращаем новую книгу
+});
 
-export const deleteProduct = createAsyncThunk(
-  "product/deleteProduct",
-  async (id, { dispatch }) => {
-    await axios.delete(`${API}/${id}`);
-    dispatch(getProducts());
-  }
-);
+export const deleteBook = createAsyncThunk("books/deleteBook", async (id) => {
+  await axios.delete(`${API}/${id}`);
+  return id; // Возвращаем id удаленной книги
+});
 
-export const getOneProduct = createAsyncThunk(
-  "product/getOneProduct",
-  async (id) => {
-    const { data } = await axios.get(`${API}/${id}`);
-    return data;
-  }
-);
+export const getOneBook = createAsyncThunk("books/getOneBook", async (id) => {
+  const { data } = await axios.get(`${API}/${id}`);
+  return data;
+});
 
-export const editProduct = createAsyncThunk(
-  "product/editProduct",
-  async ({ id, product }, { dispatch }) => {
-    await axios.put(`${API}/${id}`, product);
-    dispatch(getProducts());
+export const editBook = createAsyncThunk(
+  "books/editBook",
+  async ({ id, book }) => {
+    await axios.put(`${API}/${id}`, book);
+    return { id, book }; // Возвращаем id и обновленную книгу
   }
 );

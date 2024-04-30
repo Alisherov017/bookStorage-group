@@ -1,9 +1,4 @@
 import React from "react";
-import profilePhoto from "../img/profilePhoto.jpg";
-import instIcon from "../img/instagram-con.jpg";
-import faceIcon from "../img/footer-icon.png";
-import threadsIcon from "../img/threads-icon.jpg";
-// import profilePhoto from "../img/profilePhoto.jpg";
 import instIcon from "../img/instagram-con.jpg";
 import faceIcon from "../img/footer-icon.png";
 import threadsIcon from "../img/threads-icon.jpg";

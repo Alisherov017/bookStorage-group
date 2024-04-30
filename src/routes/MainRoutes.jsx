@@ -17,7 +17,7 @@ const MainRoutes = () => {
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/addProduct" element={<AddProduct />} />
-      <Route path="/edit" element={<EditPage />} />
+      <Route path="/edit/:id" element={<EditPage />} />
     </Routes>
   );
 };

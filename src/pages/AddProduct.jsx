@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../store/actions";
 
 const AddProduct = () => {
-
   const navigate = useNavigate();
 
   const [bookData, setBookData] = useState({
@@ -16,7 +13,6 @@ const AddProduct = () => {
     link: "",
   });
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBookData({ ...bookData, [name]: value });
@@ -25,11 +21,9 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Отправка данных книги на сервер
-      await axios.post("http://localhost:8000/product", bookData);
+      await axios.post("http://localhost:8000/books", bookData);
       alert("Книга успешно добавлена!");
 
-      // Очистка формы после добавления
       setBookData({
         image: "",
         title: "",
@@ -37,19 +31,17 @@ const AddProduct = () => {
         description: "",
         link: "",
       });
-
     } catch (error) {
       console.error("Ошибка при добавлении книги:", error);
       alert("Произошла ошибка при добавлении книги!");
     }
-     navigate("/home");
+    navigate("/admin");
   };
 
   return (
     <div>
-      <h1>Add Product</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="image">Image URL:</label>
+      <form onSubmit={handleSubmit} className="formAdd">
+        <h2>Add Product</h2>
         <input
           type="text"
           id="image"
@@ -57,9 +49,9 @@ const AddProduct = () => {
           value={bookData.image}
           onChange={handleChange}
           required
+          placeholder="Image URL:"
         />
 
-        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
@@ -67,9 +59,9 @@ const AddProduct = () => {
           value={bookData.title}
           onChange={handleChange}
           required
+          placeholder="Title:"
         />
 
-        <label htmlFor="author">Author:</label>
         <input
           type="text"
           id="author"
@@ -77,18 +69,18 @@ const AddProduct = () => {
           value={bookData.author}
           onChange={handleChange}
           required
+          placeholder="Author:"
         />
 
-        <label htmlFor="description">Description:</label>
         <textarea
           id="description"
           name="description"
           value={bookData.description}
           onChange={handleChange}
           required
+          placeholder="Description:"
         />
 
-        <label htmlFor="link">Link:</label>
         <input
           type="text"
           id="link"
@@ -96,9 +88,10 @@ const AddProduct = () => {
           value={bookData.link}
           onChange={handleChange}
           required
+          placeholder="Link:"
         />
 
-        <button type="submit">Add Book</button>
+        <button type="submit" className="addBook">Add Book</button>
       </form>
     </div>
   );

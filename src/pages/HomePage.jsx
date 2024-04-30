@@ -8,17 +8,18 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 
 const HomePage = () => {
-    const API = "http://localhost:8000/product";
-    const [booksData, setBooksData] = useState([]);
+  const API = "http://localhost:8000/books";
+  const [booksData, setBooksData] = useState([]);
 
-    const getBooksData = async () => {
-      const res = await axios.get(API);
-      setBooksData(res.data);
-    };
+  const getBooksData = async () => {
+    const res = await axios.get(API);
+    console.log(res.data);
+    setBooksData(res.data);
+  };
 
-    useEffect(() => {
-      getBooksData();
-    }, []);
+  useEffect(() => {
+    getBooksData();
+  }, []);
 
   return (
     <div>

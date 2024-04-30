@@ -1,24 +1,22 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { deleteBook, getOneBook, getBooks } from "../../store/actions";
-import { useDispatch, useSelector } from "react-redux";
+// ModalAdmin.jsx
 
-const Modal = ({ book, onClose }) => {
-  // !  удаление
-  const API = "http://localhost:8000/books";
+import React from "react";
+import { Link } from "react-router-dom";
+import { deleteBook } from "../../store/actions";
+import { useDispatch } from "react-redux";
+
+const ModalAdmin = ({ book, onClose }) => {
   const dispatch = useDispatch();
 
   const handleDeleteBook = async () => {
     try {
       await dispatch(deleteBook(book.id)); // Отправляем запрос на удаление книги
-      dispatch(getBooks()); // Получаем обновленный список продуктов после удаления
-      onClose();
+      onClose(); // Закрываем модальное окно
     } catch (error) {
       console.error("Error deleting book:", error);
     }
   };
 
-  // !openlink
   const openLink = (linkUrl) => {
     window.open(linkUrl, "_blank");
   };
@@ -43,7 +41,11 @@ const Modal = ({ book, onClose }) => {
                 read
               </span>
             </button>
-            <button className="modal-button" onClick={onClose}>
+            <Link to={`/edit/${book.id}`}>
+              <button>Edit</button>
+            </Link>
+            <button onClick={handleDeleteBook}>Delete</button>
+            <button id="modal-button" onClick={onClose}>
               Закрыть
             </button>
           </div>
@@ -53,4 +55,4 @@ const Modal = ({ book, onClose }) => {
   );
 };
 
-export default Modal;
+export default ModalAdmin;
